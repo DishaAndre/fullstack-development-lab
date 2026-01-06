@@ -1,0 +1,200 @@
+/* GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0f19;
+    color: #e6e6e6;
+    padding-top: 70px;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+.nav-link {
+    color: #e6e6e6 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffd43b !important;
+}
+
+/* SECTION SPACING */
+.section-gap {
+    padding: 80px 0;
+}
+
+/* SECTION TITLES */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4dabf7;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #4dabf7;
+    display: block;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* HERO */
+.profile-img {
+    max-width: 260px;
+    border: 4px solid #4dabf7;
+    padding: 5px;
+    background: #111;
+}
+
+.lead {
+    color: #cfcfcf;
+}
+
+
+/* CARDS */
+.card {
+    background-color: #121826;
+    color: #e6e6e6;
+    border-radius: 14px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(77, 171, 247, 0.25);
+}
+
+.card h6 {
+    color: #4dabf7;
+    font-weight: 600;
+}
+
+/* LINKS */
+a {
+    color: #74c0fc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffd43b;
+    text-decoration: underline;
+}
+
+/* LIST GROUP (Education) */
+.list-group-item {
+    background-color: #121826;
+    color: #e6e6e6;
+    border: 1px solid #1f2a44;
+}
+
+/* FOOTER */
+.footer {
+    background: #0d6efd;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+}
+
+/* CONTACT TEXT */
+#contact p {
+    margin-bottom: 6px;
+}
+
+/* EDUCATION SECTION */
+
+.education-card {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding: 22px 24px;
+    background-color: #121826;
+    border-radius: 14px;
+    border: 1px solid #1f2a44;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(77, 171, 247, 0.18);
+}
+
+/* Minimal timeline marker */
+.edu-marker {
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    border-radius: 50%;
+    background-color: #4dabf7;
+    flex-shrink: 0;
+}
+
+/* Content */
+.edu-content h5 {
+    color: #e6e6e6;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.edu-degree {
+    color: #cfcfcf;
+    margin-bottom: 2px;
+}
+
+.edu-degree span {
+    color: #9bbcff;
+}
+
+.edu-score {
+    color: #adb5bd;
+    margin: 0;
+}
+
+/* SKILLS SECTION */
+
+.skill-card {
+    background-color: #121826;
+    border: 1px solid #1f2a44;
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(77, 171, 247, 0.18);
+}
+
+.skill-card h6 {
+    color: #4dabf7;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.skill-badge {
+    display: inline-block;
+    background-color: #0b0f19;
+    color: #e6e6e6;
+    border: 1px solid #4dabf7;
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin: 4px 4px 0 0;
+    font-size: 0.875rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background-color: #4dabf7;
+    color: #0b0f19;
+}
+
+
