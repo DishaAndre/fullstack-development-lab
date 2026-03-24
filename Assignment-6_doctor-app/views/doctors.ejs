@@ -1,0 +1,39 @@
+<%# views/doctors.ejs — Doctor Listing Page %>
+<%- include('partials/header') %>
+
+<main>
+
+  <h1 class="page-title">Our Doctors</h1>
+  <p class="page-subtitle">Meet our team of experienced specialists available for appointments.</p>
+
+  <!-- Doctor Cards Grid -->
+  <div class="doctor-grid">
+
+    <% doctors.forEach(function(doc, index) { %>
+      <%
+        // Pick an emoji avatar based on index so each card looks different
+        const avatars = ['👨‍⚕️','👩‍⚕️','🧑‍⚕️','👨‍⚕️','👩‍⚕️','🧑‍⚕️'];
+        const avatar  = avatars[index % avatars.length];
+      %>
+
+      <div class="doctor-card">
+        <div class="doctor-avatar"><%= avatar %></div>
+        <div class="doctor-info">
+          <h3><%= doc.name %></h3>
+          <div class="doctor-specialty"><%= doc.specialty %></div>
+          <div class="doctor-avail">🗓 Available: <%= doc.available %></div>
+        </div>
+      </div>
+
+    <% }); %>
+
+  </div>
+
+  <!-- CTA link -->
+  <div style="margin-top:2rem; text-align:center;">
+    <a href="/book" class="btn btn-primary">Book an Appointment</a>
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>

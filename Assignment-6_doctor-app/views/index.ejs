@@ -1,0 +1,41 @@
+<%# views/index.ejs — Home Page %>
+<%- include('partials/header') %>
+
+<main>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <h1>MediBook</h1>
+    <p>Book your doctor appointment quickly and easily. Choose from our experienced specialists and pick a time that works for you.</p>
+    <div class="hero-buttons">
+      <a href="/book"        class="btn btn-primary">Book Appointment</a>
+      <a href="/doctors"     class="btn btn-outline">View Doctors</a>
+    </div>
+  </div>
+
+  <!-- Feature Highlights -->
+  <div class="features">
+
+    <div class="feature-card">
+      <div class="feature-icon">👨‍⚕️</div>
+      <h3>Experienced Doctors</h3>
+      <p>Choose from a curated list of specialist doctors across multiple departments.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Easy Booking</h3>
+      <p>Fill a simple form to book your appointment in under a minute, any time.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <h3>View All Bookings</h3>
+      <p>Track all appointments that have been booked through the system at a glance.</p>
+    </div>
+
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>

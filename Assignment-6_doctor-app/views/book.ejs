@@ -1,0 +1,111 @@
+<%# views/book.ejs — Appointment Booking Form %>
+<%- include('partials/header') %>
+
+<main>
+
+  <h1 class="page-title">Book an Appointment</h1>
+  <p class="page-subtitle">Fill in the details below to schedule your visit.</p>
+
+  <!-- ── Success Message (shown after a successful booking) ── -->
+  <% if (success) { %>
+    <div class="alert alert-success">
+      &nbsp;<strong><%= success %></strong>
+    </div>
+  <% } %>
+
+  <!-- ── Validation Error Messages ── -->
+  <% if (errors.length > 0) { %>
+    <div class="alert alert-error">
+      &nbsp;Please fix the following errors:
+      <ul>
+        <% errors.forEach(function(err) { %>
+          <li><%= err %></li>
+        <% }); %>
+      </ul>
+    </div>
+  <% } %>
+
+  <!-- ── Booking Form ── -->
+  <!--
+    action="/book"  → sends the form data to POST /book route
+    method="POST"   → HTTP POST method to submit data
+  -->
+  <form action="/book" method="POST">
+    <div class="card form-card">
+
+      <!-- Patient Name -->
+      <div class="form-group">
+        <label for="name">Patient Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+
+      <!-- Doctor Selection -->
+      <div class="form-group">
+        <label for="doctor">Select Doctor</label>
+        <select id="doctor" name="doctor" required>
+          <option value="">-- Choose a Doctor --</option>
+          <!-- Loop through the doctors array to create dropdown options -->
+          <% doctors.forEach(function(doc) { %>
+            <option value="<%= doc.name %>">
+              <%= doc.name %> — <%= doc.specialty %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+
+      <!-- Appointment Date -->
+      <div class="form-group">
+        <label for="date">Appointment Date</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          required
+        />
+      </div>
+
+      <!-- Time Slot -->
+      <div class="form-group">
+        <label for="time">Time Slot</label>
+        <select id="time" name="time" required>
+          <option value="">-- Choose a Time Slot --</option>
+          <option value="09:00 AM">09:00 AM</option>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
+          <option value="03:00 PM">03:00 PM</option>
+          <option value="04:00 PM">04:00 PM</option>
+          <option value="05:00 PM">05:00 PM</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-submit">
+        Confirm Appointment
+      </button>
+
+    </div><!-- /.card -->
+  </form>
+
+  <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">
+    Want to see all bookings? <a href="/appointments">View Appointments →</a>
+  </p>
+
+</main>
+
+<!-- Set today's date as the minimum selectable date using JavaScript -->
+<script>
+  // Prevent users from selecting a past date in the date picker
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0]; // format: YYYY-MM-DD
+  dateInput.setAttribute('min', today);
+</script>
+
+<%- include('partials/footer') %>

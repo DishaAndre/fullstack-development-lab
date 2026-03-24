@@ -1,0 +1,77 @@
+<%# views/appointments.ejs — All Booked Appointments Page %>
+<%- include('partials/header') %>
+
+<main>
+
+  <h1 class="page-title">All Appointments</h1>
+  <p class="page-subtitle">A complete list of all booked appointments, newest first.</p>
+
+  <!-- Stats Row -->
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-number"><%= appointments.length %></div>
+      <div class="stat-label">Total Bookings</div>
+    </div>
+  </div>
+
+  <!-- Appointments Table or Empty State -->
+  <% if (appointments.length === 0) { %>
+
+    <!-- Show this when no appointments exist yet -->
+    <div class="card empty-state">
+      <span>📋</span>
+      <p>No appointments booked yet.</p>
+      <a href="/book" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">
+        Book the First One →
+      </a>
+    </div>
+
+  <% } else { %>
+
+    <div class="card table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Patient Name</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Booked On</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%
+            // Loop through each appointment and display in a table row
+            appointments.forEach(function(appt, index) {
+              // Format the createdAt date nicely for display
+              const bookedOn = new Date(appt.createdAt).toLocaleDateString('en-IN', {
+                day:   '2-digit',
+                month: 'short',
+                year:  'numeric'
+              });
+          %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= appt.name %></td>
+            <td>
+              <span class="badge"><%= appt.doctor %></span>
+            </td>
+            <td><%= appt.date %></td>
+            <td><%= appt.time %></td>
+            <td><%= bookedOn %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+  <% } %>
+
+  <p style="margin-top:1.25rem; font-size:0.85rem; color:var(--muted);">
+    Want to add more? <a href="/book">Book another appointment →</a>
+  </p>
+
+</main>
+
+<%- include('partials/footer') %>
