@@ -1,0 +1,56 @@
+/* src/index.css — Global styles and CSS variables */
+
+:root {
+  --blue-dark:    #1a3557;
+  --blue-mid:     #2563eb;
+  --blue-light:   #dbeafe;
+  --blue-subtle:  #f0f6ff;
+  --grey-900:     #111827;
+  --grey-700:     #374151;
+  --grey-500:     #6b7280;
+  --grey-300:     #d1d5db;
+  --grey-100:     #f3f4f6;
+  --white:        #ffffff;
+  --danger:       #dc2626;
+  --success:      #16a34a;
+  --success-bg:   #f0fdf4;
+  --border:       #e5e7eb;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:    0 4px 16px rgba(0,0,0,0.10);
+  --radius:       10px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--grey-100);
+  color: var(--grey-900);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+}
